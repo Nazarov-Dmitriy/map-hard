@@ -4,12 +4,12 @@ test('Проверка замены пользовательских настр�
   let setting = new Settings([{
     'theme': 'red',
   }, {
-    'music': 'rock'
+    'music': 'chillout'
   }]);
-  setting.getSetting()
-  expect(Array.from(setting.defaultSetting)).toEqual([
-    ['theme', 'red'],
-    ['music', 'rock'],
-    ['difficulty', 'easy']
-  ]);
+  
+  expect(setting.getSetting()).toEqual({
+    theme: 'red',
+    music: 'chillout',
+    difficulty: 'easy'
+  });
 });

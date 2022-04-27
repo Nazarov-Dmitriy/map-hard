@@ -20,12 +20,23 @@
    }
 
    getSetting() {
+     let newSetting = Object.fromEntries(this.defaultSetting.entries());
      this.userSettings.forEach(item => {
-       if (this.defaultSetting.has(Object.keys(item)[0])) {
-         console.log('sod');
-         this.defaultSetting.set(Object.keys(item)[0], Object.values(item)[0]);
+       if (this.defaultSetting.has(Object.keys(item)[0]) && this.configurationSetteng[Object.keys(item)[0]].includes(Object.values(item)[0])) {
+         newSetting[Object.keys(item)[0]] = Object.values(item)[0];
        }
+
      });
+     return newSetting;
    }
  }
 
+ let setting = new Settings([{
+   'theme': 'red',
+ }, {
+   'music': 'chillout'
+ }]);
+
+ ;
+
+ console.log(setting.getSetting());
