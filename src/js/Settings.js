@@ -31,12 +31,4 @@
    }
  }
 
- let setting = new Settings([{
-   'theme': 'red',
- }, {
-   'music': 'chillout'
- }]);
 
- ;
-
- console.log(setting.getSetting());
